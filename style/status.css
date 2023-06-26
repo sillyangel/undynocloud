@@ -1,0 +1,270 @@
+body{
+    margin:0;
+}
+
+.status.popover .header{
+    border-bottom:2px solid rgb(200,200,200);
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.status.popover .header span{
+    height:30px;
+    font-size:14px;
+}
+
+.status.popover .body{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.status.popover .wrapper{
+    height: 80%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 382px;
+}
+.status.popover .connectionWrapper {
+    height: 100%;
+}
+
+.status.popover .body .cell{
+    height:100%;
+    width:33%;
+    float:left;
+    text-align:center;
+    position:relative;
+    background-color: white;
+}
+
+.status.popover .body .cell .content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    margin-right: -50%;
+}
+
+.status.popover .body .cell .mask{
+    position:absolute;
+    left:0;
+    top:0px;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    z-index:2;
+    color:white;
+    background-color: #99cc00;
+}
+
+.status.popover .body .cell .mask.selected{
+    opacity:.5;
+}
+
+.status.popover .body .cell .mask.selected .content{
+    display:none;
+}
+
+
+.status.popover .body .cell{
+    border-right:1px solid rgb(200,200,200);
+}
+.status.popover .body .cell i {
+    font-size: 90px;
+    color: #2ca6dd;
+}
+.status.popover .body .cell .mask i{
+    margin-top:0px;
+    font-size: 35px;
+    width: 100%;
+    color: white;
+}
+
+.status.popover .body .cell:last-child{
+    border-right: none;
+}
+.cell + .cell + .cell{
+    border: none !important;
+}
+
+.status img{
+    margin-top:15px;
+    border-radius:50%
+}
+
+.status p{
+    font-size:12px;
+    line-height:12px;
+    margin-top: 5px;
+}
+
+.somethingNotWorking {
+    background-color: #f0f0f0;
+    text-align: end;
+    height: 28px;
+    line-height: 28px;
+    text-decoration: underline;
+}
+.somethingNotWorking a {
+    color: black;
+    font-size: 15px;
+}
+.healthCheckWrapper {
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+}
+.healthCheckCodeHeader {
+    margin-left: 25%;
+    font-size: 23px;
+    padding-top: 32px;
+    margin-bottom: 10px;
+}
+.healthCheckForm {
+    height: 50px;
+    margin-left: 20px;
+}
+.healthCheckCode {
+    display: inline-block;
+    height: 100%;
+    margin-right: 5px;
+}
+.healthCheckCode input {
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    width: 227px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.healthCheckSubmit {
+    display: inline-block;
+    height: 100%;
+    width: 100px;
+    vertical-align: bottom;
+    border: none;
+}
+.healthCheckSubmit:focus {
+    outline: none;
+}
+.heathCheckSubmitText {
+    text-align: center;
+    font-size: 20px;
+}
+.healthCheck {
+    height: 152px;
+}
+.heathCheckCodeEmpty {
+    background-color: #f0f0f0 !important;
+    color: darkgray;
+}
+.healthCheckCodePopulated {
+    background-color: #2ca6dd !important;
+    color: white !important;
+}
+.healthCheckIssueWrapper {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.healthCheckIssue {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+.healthCheckResolution {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.secondaryIssue {
+    margin-top: 10px;
+}
+.notifyMessage {
+    margin-bottom: 10px;
+}
+.secondaryResolution {
+    margin-bottom: 10px;
+}
+.healthCheckActionButton {
+    font-size: 20px;
+    line-height: 30px;
+    height: 40px;
+    width: 340px;
+    background-color: #2ca6dd;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+.restartDyknowButton {
+    font-size: 20px;
+    line-height: 30px;
+    height: 40px;
+    width: 340px;
+    background-color: #2ca6dd;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+}
+.restartEnabled {
+    background-color: #2ca6dd;
+    color: white;
+}
+.restartDisabled {
+    background-color: #f0f0f0;
+    color: darkgray;
+}
+.white {
+    color: white;
+}
+.white-bg {
+    background-color: white;
+}
+.gray-bg {
+    background-color: #f0f0f0;;
+}
+.notifyAdminWrapper {
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 10px;
+    background-color: white;
+}
+.notifyAdminHeader {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+.notifyHeader {
+    font-size: 20px;
+}
+.snw {
+    padding-right: 15px;
+}
+.doneOrCancel {
+    padding-right: 0px;
+}
+.selectStudent {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.selectStudentSpacer {
+    height: 10px;
+}
+.radio {
+    vertical-align: top;
+    height: 16px;
+}

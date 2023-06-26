@@ -1,0 +1,165 @@
+/*
+ * Dyknow Login Screen for Chromebook App
+ */
+
+ html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-family: 'robotoregular', sans-serif;
+	position: relative;
+	font-size: 18px;
+
+	background: url('/images/login.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* ---------- White BG Overlay & Top Spacing ------------ */
+
+#overlay {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.7);
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	z-index: 1;
+	display: table;
+}
+
+#container {
+	z-index: 2;
+	display: table-cell;
+  vertical-align: middle;
+}
+
+/* ---------- Floating Text Box ------------ */
+
+.content-box {
+	max-width: 375px;
+	min-width: 275px;
+	background-color: rgba(255, 255, 255, 0.9);
+	margin: 0 auto;
+	padding: 2%;
+	text-align: center;
+}
+	.content-box hr {
+		border: 1px solid #32b4e5;
+	}
+	.content-box a img {
+		opacity: 1;
+		text-align: center;
+		width: 200px;
+		height: auto;
+		padding: 5% 0 10% 0;
+	}
+	.content-box a {
+		text-decoration: none;
+		color: #32b4e5;
+	}
+		.content-box a.prompt {
+			font-family: 'robotolight', sans-serif;
+			font-size: 0.8em;
+		}
+		.content-box a.prompt:hover {
+			font-family: 'robotomedium', sans-serif;
+		}
+
+.login-area {
+	text-align: center;
+	position: relative;
+}
+#loginform{
+	display:none;
+}
+#dyknowlogin{
+	font-family: 'robotothin', sans-serif;
+	cursor: pointer;
+}
+
+	.login-area input {
+		font-family: 'robotolight', sans-serif;
+		font-size: 0.9em;
+		color: #6C6B6A;
+		padding: 0 0 0 10px;
+		margin: 0;
+        margin-top:9px;
+        margin-bottom:9px;
+		width: 100%;
+		border: none;
+		background: none;
+		outline: none;
+	}
+	.login-area input:focus {font-family: 'robotomedium', sans-serif;}
+
+/* ---------- General Selectors ------------ */
+
+.border-radius-5 {
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+/*----------- Login Error  -------------*/
+#error{
+    font-size: 12px;
+    color: red;
+    display:none;
+}
+/* ---------- Login Button ------------ */
+
+.content-box input.login-button {
+	background-color: #32b4e5;
+	color: #ffffff;
+	font-weight: normal;
+	font-size: 1em;
+	text-align: center;
+	text-indent: 0;
+	line-height: 50px;
+	display: inline-block;
+	height: 50px;
+	width: 100%;
+    border: none;
+}
+.content-box input.login-button:hover {
+	background-color: #6298BE;
+}
+.content-box input.login-button:active {
+	position: relative;
+	top: 1px;
+}
+
+/* ---------- Login With Google Button --------- */
+
+#google{
+	display: inline-block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	border-radius: 2px;
+	width: 100%;
+	box-sizing: border-box;
+	color:white;
+	cursor:pointer;
+}
+
+#google i{
+	line-height: 47px;
+	padding-left:3px;
+}
+
+/* ---------- Responsive Breakpoints ------------ */
+
+@media (max-width: 767px) {
+
+	.content-box {
+		padding: 5%;
+		max-width: 0;
+	}
+
+}

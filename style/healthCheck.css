@@ -1,0 +1,75 @@
+/* .healthCheckWrapper {
+    height: 100%;
+}
+.healthCheckCodeHeader {
+    margin-left: 25%;
+    width: 50%;
+    font-size: 23px;
+    padding-top: 37px;
+    margin-bottom: 10px;
+}
+.healthCheckForm {
+    height: 50px;
+    margin-left: 20px;
+}
+.healthCheckCode {
+    display: inline-block;
+    height: 100%;
+    margin-right: 5px;
+}
+.healthCheckCode input {
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    width: 247px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.healthCheckSubmit {
+    display: inline-block;
+    height: 100%;
+    width: 100px;
+    vertical-align: bottom;
+}
+.heathCheckSubmitText {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.healthCheck {
+    height: 153px;
+}
+.heathCheckCodeEmpty {
+    background-color: #f0f0f0 !important;
+}
+.healthCheckCodePopulated {
+    background-color: #2ca6dd !important;
+    color: white !important;
+}
+.healthCheckIssueWrapper {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.healthCheckIssue {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.healthCheckResolution {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.healthCheckActionButton {
+    font-size: 20px;
+    height: 40px;
+    width: 360px;
+    color: white;
+    background-color: #2ca6dd;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 5px;
+}
+.notifyHeader {
+    font-size: 20px;
+} */

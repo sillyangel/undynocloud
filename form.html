@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style/style.css">
+        <link rel="stylesheet" type="text/css" href="/style/fonts.css">
+        <link rel="stylesheet" href="/style/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/style/bootstrap/css/bootstrap-social.css">
+        <script type="text/javascript" src="js/lib/jquery-2.1.1.min.js"></script>
+        <script data-main="js/content/form.js" src="/js/lib/require.js"></script>
+    </head>
+    <body>
+        <div id="overlay">
+            <div id="container">
+                <div class="content-box border-radius-5">
+                    <p id="error">Please make sure your username, password, and vanity are correct</p>
+                    <a href="#"><img src="/images/login-logo.png" /></a>
+                    <a id="google" class="btn-social btn-google-plus">
+                        <i class="fa fa-google-plus"></i> Log in with Google
+                    </a>
+                    <a id="dyknowlogin">or log in with Dyknow</a>
+
+                    <form id="loginform" class="login-area">
+                        <input type="username" required placeholder="Email or Username" id="username">
+                        <hr class="border-radius-5" />
+                        <input type="password" required placeholder="Password" id="password">
+                        <hr class="border-radius-5" />
+                        <input type="text" required placeholder="institution.dyknow.me" id="vanity">
+                        <input type="submit" class="login-button border-radius-5" value="Sign In" id="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</HTML>

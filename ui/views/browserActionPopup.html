@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <!-- statusRequest.html -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style/status.css">
+        <link rel="stylesheet" type="text/css" href="/style/connection.css">
+        <link rel="stylesheet" type="text/css" href="/style/healthCheck.css">
+        <link rel="stylesheet" type="text/css" href="/style/fonts.css">
+        <link rel="stylesheet" href="/style/font-awesome/css/font-awesome.min.css">
+        <script data-main="/ui/js/browserActionMain" src="/js/lib/require.js"></script>
+    </head>
+    <body>
+        <div id="browseractions" class="">
+            <!-- ko with: statusViewModel -->
+            <div id="popover" style="width:400px;" data-bind="style: { height: popupHeight() }" class="status popover">
+                <div class="body" data-bind="css: noInternetBackground">
+                    <div class="healthCheckWrapper" data-bind="visible: healthCheckStarted()">
+                        <div id="healthCheck" data-bind="visible: issueDetected">
+                            <!-- ko ifnot: InternetOrServerIssue -->
+                            <!-- ko ifnot: notifyAdminState-->
+                            <div class="healthCheckIssueWrapper">
+                                <div class="healthCheckIssue" data-bind="text: healthCheckIssue"></div>
+                                <div class="healthCheckResolution" data-bind="text: healthCheckResolution"></div>
+                                <!-- ko if: secondaryIssue-->
+                                <div class="healthCheckIssue secondaryIssue" data-bind="text: healthCheckSecondaryIssue"></div>
+                                <div class="healthCheckResolution secondaryResolution" data-bind="text: healthCheckSecondaryResolution"></div>
+                                <!-- /ko -->
+                                <!-- ko if: unknownIssue() || needReinstall() -->
+                                <button class="restartDyknowButton" data-bind="visible: showActionButton, click: sendLogsAndRestart, disable: sendingLogs, css: restartDyknowStatus">
+                                    <div data-bind="text: restartDyknowButtonText"></div>
+                                </button>
+                                <!-- /ko -->
+                                <!-- ko ifnot: unknownIssue() || needReinstall()-->
+                                <!-- ko if: secondaryIssue-->
+                                <button class="healthCheckActionButton white" data-bind="visible: showActionButton, click: displayNotifyAdmin">
+                                    <div data-bind="text: healthCheckIssueButtonText"></div>
+                                </button>
+                                <!-- /ko -->
+                                <!-- ko ifnot: secondaryIssue-->
+                                <button class="healthCheckActionButton white" data-bind="visible: showActionButton, click: displayNotifyAdmin">
+                                    <div data-bind="text: healthCheckIssueButtonText"></div>
+                                </button>              
+                                <!-- /ko -->
+                                <!-- /ko-->
+                            </div>
+                            <!-- /ko -->
+                            <!-- /ko -->
+                            <div class="notifyAdminWrapper" data-bind="visible: notifyAdminState">
+                                <div class="notifyAdminHeader" data-bind="text: notifyHeader"></div>
+                                    <!-- ko if: showSelectableStudents -->
+                                    <!-- ko foreach: selectableStudents -->
+                                    <div class="selectStudent">
+                                        <input class="radio" type="radio" name="studentselect" data-bind="attr: { id: $index, value: $data }, checked: $parent.selectedStudent"><label data-bind="text: $data, attr: { 'for': $index }"></label>
+                                    </div>
+                                    <!-- /ko -->
+                                    <div class="selectStudentSpacer">&nbsp;</div>
+                                    <!-- /ko -->
+                                    <!-- ko if: showNotifyMessage -->
+                                        <div class="healthCheckResolution notifyMessage" data-bind="text: notifyMessage"></div>
+                                    <!-- /ko -->
+                                <button class="healthCheckActionButton" data-bind="visible: showActionButton, css: studentSelectedStatus, click: notifyAdmin, enable: studentSelected">
+                                    <div data-bind="text: healthCheckIssueButtonText"></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="healthCheck" data-bind="visible: !issueDetected()">
+                            <div class="healthCheckCodeHeader">
+                                Health Check Code
+                            </div>
+                            <div class="healthCheckForm">
+                                <div class="healthCheckCode">
+                                    <input type="text" id="healthCheckCode" spellcheck="false" data-bind="textInput: healthCheckCodeText, event: { keyup: enterPressed }, hasFocus: healthCheckInputFocused">
+                                </div>
+                                <button class="healthCheckSubmit" data-bind="css: healthCheckCodeStatus, click: validateHealthCheckCode, disable: validating">
+                                    <div class="heathCheckSubmitText" data-bind="text: healthCheckButtonText"></div>
+                                </button>
+                            </div>  
+                        </div>
+                        <div class="somethingNotWorking" data-bind="css: somethingNotWorkingOrOther">
+                            <a href="#" data-bind="click:cancelHealthCheck, text: cancelOrDoneText">Change</a>
+                        </div>
+                    </div>
+                    <div class="connectionWrapper" data-bind="visible: !connected()">
+                        <div class="connection">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <p>Please connect to the Internet</p>
+                        </div>
+                    </div>
+                    <div class="wrapper" data-bind="visible:loaded()">
+                        <!-- ko foreach: statusOptions -->
+                        <div  class="cell" data-bind="click:$parent.sendStatus, class: $parent.getClassForStatus($data)">
+                            <div class="content">
+                                <i class="fa" data-bind="css:$parent.getFontAwesomeClassForStatus($data)"></i>
+                                <p data-bind="text:text"></p>
+                            </div>
+                            <div style="display:none;" data-bind="visible:$parent.selectedStatus().order === order" class="mask selected">
+                                <div class="content">
+                                    <p>Status Sent</p>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                            <div  style="display:none;" data-bind="visible:showMask()" class="mask">
+                                <div class="content">
+                                    <p>Status Sent</p>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="somethingNotWorking" data-bind="css: somethingNotWorkingOrOther, visible:loaded()">
+                        <a href="#" data-bind="click:startHealthCheck">Something not working?</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </body>
+</HTML>

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style/options.css">
+        <link rel="stylesheet" type="text/css" href="/style/fonts.css">
+        <script type="text/javascript" src="../../js/lib/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.ba-tinypubsub-0.6.min.js"></script>
+    </head>
+    <body>
+        <div id="overlay">
+            <div id="container">
+                <div class="content-box border-radius-5">
+                    <h2 >Dyknow Log Sender</h2>
+                    <hr class="border-radius-5" />
+                    <form class="info-area">
+                        <input type="text" required placeholder="Username" id="username" style="font-style:italic;font-weight:bold;"/>
+                        <hr class="border-radius-5" />
+                        <input id="email" type="email" required placeholder="Teacher's Email"/>
+                        <hr class="border-radius-5" />
+                        <input type="text" required placeholder="institution.dyknow.me" id="institution"/>
+                        <hr class="border-radius-5" />
+                        <p id="dateError" class="error">End date must be on or after start date.</p>
+                        <input required id="startdate" type="date"/>
+                        <hr class="border-radius-5" />
+                        <input required id="enddate" type="date"/>
+                        <hr class="border-radius-5" />
+                        <textarea id="notes" required placeholder="Describe the problem"></textarea>
+                        <p id="error">Unable to send logs: <span id="error-msg"></span></p>
+                        <p id="success">Logs Successfuly Sent</p>
+                        <button class="log-button border-radius-5"  id="send">Send Logs</button>
+                    </form>
+                    <progress max="100" value="0"></progress>
+                    <span class="progress-message"></span>
+                </div>
+            </div>
+        </div>
+        <script src="../js/options.js"></script>
+    </body>
+</HTML>
+
+

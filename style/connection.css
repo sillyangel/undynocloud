@@ -1,0 +1,16 @@
+.status.popover .body .connection {
+    height: 100%;
+    top: 15%;
+    text-align: center;
+    position: relative;
+}
+.status.popover .body .connection:last-child{
+    border-right: none;
+}
+.status.popover .body .connection i {
+    font-size: 90px;
+    color: #2ca6dd;
+}
+.status.popover .body .connection p {
+    font-size: 15px;
+}
