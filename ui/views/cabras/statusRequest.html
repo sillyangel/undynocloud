@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<HTML>
+<head>
+    <!-- statusRequest.html -->
+    <title>Select a status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/status.css">
+    <link rel="stylesheet" type="text/css" href="/style/fonts.css">
+    <link rel="stylesheet" href="/style/font-awesome/css/font-awesome.min.css">
+    <script data-main="/ui/js/main" src="/js/lib/require.js"></script>
+</head>
+<body>
+    <div id="status" class="">
+        <div class="status popover">
+            <div class="body" data-bind="visible:loaded()">
+                <!-- ko foreach: statusOptions -->
+                <div class="cell" data-bind="click:$parent.sendStatus, class: $parent.getClassForStatus($data)">
+                    <div class="content">
+                        <i class="fa" data-bind="css:$parent.getFontAwesomeClassForStatus($data)"></i>
+                        <p data-bind="text:text"></p>
+                    </div>
+                    <div style="display:none;" data-bind="visible:$parent.selectedStatus().order === order" class="mask selected">
+                        <div class="content">
+                            <p>Status Sent</p>
+                            <i class="fa fa-check"></i>
+                        </div>
+                    </div>
+                    <div  style="display:none;" data-bind="visible:showMask" class="mask">
+                        <div class="content">
+                            <p>Status Sent</p>
+                            <i class="fa fa-check"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</body>
+</HTML>
