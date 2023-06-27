@@ -1,5 +1,5 @@
 # undynocloud
-reverse engineering dyno cloud
+reverse engineering dynow* cloud
 
 this is early so stuff are not working but you can see how it works
 
